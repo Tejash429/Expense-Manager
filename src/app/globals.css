@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .dropdown-content {
+    padding: 40px;
+    border-bottom: 1px solid rgb(var(--foreground-rgb));
+  }
+}
