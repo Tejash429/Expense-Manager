@@ -17,10 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' data-theme='forest'>
-      <body className={inter.className}>
-        <NavBar />
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

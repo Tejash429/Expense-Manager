@@ -4,7 +4,7 @@ export default function Payment() {
   return (
     <div className=''>
       <label
-        className='block text-gray-400 text-sm font-bold mb-2'
+        className='block text-[#F0F0F0]  text-sm font-bold mb-2'
         htmlFor='payment'
       >
         Payment Method
@@ -14,7 +14,8 @@ export default function Payment() {
         id='payment'
         name='payment'
         placeholder='Payment Method '
-        className='w-full px-3 py-2 rounded-md border border-gray-600 focus:outline-none focus:border-blue-500 bg-gray-700 text-white'
+        className='w-full px-3 py-2 rounded-md border border-gray-700 focus:outline-none focus:border-skyBlue bg-[#1A191A] text-[#E0E0E0]
+    focus:border-blue-500'
       />
     </div>
   );

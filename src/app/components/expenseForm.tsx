@@ -8,8 +8,11 @@ import Vendor from './ExpenseForm/vendor';
 
 export default function ExpenseForm() {
   return (
-    <form className='w-full max-w-sm mx-auto bg-gray-800 text-white p-4 rounded-md  '>
-      <h1 className='text-xl text-center font-semibold mb-5'>Add Expense</h1>
+    <>
+      <div className='flex flex-wrap justify-between items-center mb-5'>
+        <h1 className='text-xl text-center font-semibold '>Add Expense</h1>
+        <button className='btn btn-sm btn-circle btn-ghost '>✕</button>
+      </div>
       <div className='grid grid-cols-2 gap-4'>
         <div className='col-span-1'>
           <Payment />
@@ -43,6 +46,6 @@ export default function ExpenseForm() {
           Cancel
         </button>
       </div>
-    </form>
+    </>
   );
 }
