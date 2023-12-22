@@ -12,6 +12,15 @@ const config: Config = {
     themes: ['forest'],
   },
   theme: {
+    screens: {
+      mobile: '320px',
+
+      tablet: '768px',
+
+      laptop: '1024px',
+
+      desktop: '1280px',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
