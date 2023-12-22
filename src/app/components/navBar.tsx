@@ -1,8 +1,27 @@
-export default function NavBar() {
+import React from 'react';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+} from '@nextui-org/react';
+
+export default function App() {
   return (
-    <nav className='flex flex-wrap justify-between items-center bg-[#232023] p-[16px]'>
-      <h1 className='text-2xl font-semibold'>Expense Manager </h1>
-      {/* <button className='btn btn-primary rounded-xl'>logout</button> */}
-    </nav>
+    <Navbar className='bg-[#232122]'>
+      <NavbarBrand>
+        <p className='font-bold text-inherit'>MoneyMinder</p>
+      </NavbarBrand>
+
+      <NavbarContent justify='end'>
+        <NavbarItem>
+          <Button as={Link} color='primary' href='#' variant='flat'>
+            Login
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
   );
 }

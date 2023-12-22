@@ -14,13 +14,14 @@ import Category from './FormElements/category';
 import Payment from './FormElements/payment';
 import Vendor from './FormElements/vendor';
 import Description from './FormElements/description';
+import IncomeSource from './FormElements/incomeSource';
 
-export default function ExpenseForm() {
+export default function IncomeForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <Button onPress={onOpen}>Add Expense</Button>
+      <Button onPress={onOpen}>Add Income</Button>
       <Modal
         backdrop='blur'
         placement='center'
@@ -29,21 +30,16 @@ export default function ExpenseForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form>
+            <>
               <ModalHeader className='flex flex-col gap-1'>
-                Expense Form
+                Income Form
               </ModalHeader>
               <ModalBody>
-                <Vendor />
-                <Description />
                 <div className='flex flex-row gap-4 '>
                   <Amount />
                   <Date />
                 </div>
-                <div className='flex flex-row gap-4 '>
-                  <Category />
-                  <Payment />
-                </div>
+                <IncomeSource />
               </ModalBody>
               <ModalFooter>
                 <Button color='danger' variant='light' onPress={onClose}>
@@ -53,7 +49,7 @@ export default function ExpenseForm() {
                   Add
                 </Button>
               </ModalFooter>
-            </form>
+            </>
           )}
         </ModalContent>
       </Modal>

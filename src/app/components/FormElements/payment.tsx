@@ -1,5 +1,5 @@
 import React from 'react';
-import { Autocomplete, AutocompleteItem } from '@nextui-org/react';
+import { Select, SelectItem } from '@nextui-org/react';
 
 const categorys = [
   {
@@ -21,13 +21,18 @@ const categorys = [
 export default function Payment() {
   return (
     <div className='flex w-full flex-wrap md:flex-nowrap gap-4'>
-      <Autocomplete label='Payment Method' className='max-w-xs'>
+      <Select
+        placeholder='Payment Method'
+        label='Category'
+        labelPlacement='outside'
+        className='max-w-xs'
+      >
         {categorys.map((category) => (
-          <AutocompleteItem key={category.value} value={category.value}>
+          <SelectItem key={category.value} value={category.value}>
             {category.label}
-          </AutocompleteItem>
+          </SelectItem>
         ))}
-      </Autocomplete>
+      </Select>
     </div>
   );
 }

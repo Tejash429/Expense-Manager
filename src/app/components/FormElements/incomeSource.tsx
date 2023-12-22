@@ -1,12 +1,12 @@
 import { Input } from '@nextui-org/react';
 import React from 'react';
 
-export default function Date() {
+export default function IncomeSource() {
   return (
     <Input
-      type='date'
-      label='Date'
-      placeholder='Select Date'
+      type='text'
+      label='Income Source'
+      placeholder='Enter your income source'
       labelPlacement='outside'
     />
   );
