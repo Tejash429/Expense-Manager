@@ -10,9 +10,11 @@ import {
 
 export default function App() {
   return (
-    <Navbar className='bg-[#232122]'>
+    <Navbar className='bg-[#232122] ' maxWidth='full'>
       <NavbarBrand>
-        <p className='font-bold text-inherit'>MoneyMinder</p>
+        <p className='font-bold text-inherit tablet:text-2xl  mobile:text-xl'>
+          MoneyMinder
+        </p>
       </NavbarBrand>
 
       <NavbarContent justify='end'>

@@ -20,7 +20,9 @@ export default function ExpenseForm() {
 
   return (
     <>
-      <Button onPress={onOpen}>Add Expense</Button>
+      <Button onPress={onOpen} color='danger'>
+        Add Expense
+      </Button>
       <Modal
         backdrop='blur'
         placement='center'
@@ -35,8 +37,8 @@ export default function ExpenseForm() {
               </ModalHeader>
               <ModalBody>
                 <Vendor />
-                <Description />
                 <div className='flex flex-row gap-4 '>
+                  {/* <Description /> */}
                   <Amount />
                   <Date />
                 </div>

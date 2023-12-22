@@ -10,10 +10,7 @@ import {
 } from '@nextui-org/react';
 import Amount from './FormElements/amount';
 import Date from './FormElements/date';
-import Category from './FormElements/category';
-import Payment from './FormElements/payment';
-import Vendor from './FormElements/vendor';
-import Description from './FormElements/description';
+
 import IncomeSource from './FormElements/incomeSource';
 
 export default function IncomeForm() {
@@ -21,7 +18,9 @@ export default function IncomeForm() {
 
   return (
     <>
-      <Button onPress={onOpen}>Add Income</Button>
+      <Button onPress={onOpen} color='primary'>
+        Add Income
+      </Button>
       <Modal
         backdrop='blur'
         placement='center'
