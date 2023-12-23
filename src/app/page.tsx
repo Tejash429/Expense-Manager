@@ -1,7 +1,6 @@
-'use client';
 import { Divider } from '@nextui-org/react';
-import ExpenseForm from './components/expenseForm';
 import ExpenseList from './components/expenseList';
+import ExpenseForm from './components/expenseForm';
 import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';
 
@@ -34,19 +33,9 @@ export default function Home() {
         </div>
         <center>
           <div className='h-px bg-gray-700 tablet:mt-3 mobile:mt-0 text-center mb-4 w-[97%]' />
-          {/* <div className='grid grid-rows-5 grid-flow-col  gap-4'>
+          <div className='grid grid-rows-5 grid-flow-col  gap-4'>
             <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-            <ExpenseList />
-          </div> */}
+          </div>
         </center>
       </section>
     </main>

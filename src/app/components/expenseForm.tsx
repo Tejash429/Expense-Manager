@@ -1,3 +1,4 @@
+'use client';
 import {
   Modal,
   ModalContent,
@@ -17,10 +18,6 @@ import { addExpense } from '../actions';
 export default function ExpenseForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const handleSubmit = () => {
-    console.log('Clicked');
-  };
-
   return (
     <>
       <Button onPress={onOpen} color='danger'>
@@ -34,7 +31,7 @@ export default function ExpenseForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form action={addExpense} onSubmit={handleSubmit}>
+            <form action={addExpense}>
               <ModalHeader className='flex flex-col gap-1'>
                 Expense Form
               </ModalHeader>

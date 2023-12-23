@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   Modal,
@@ -17,9 +18,6 @@ import { addIncome } from '../actions';
 export default function IncomeForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const handleSubmit = () => {
-    console.log('Clicked');
-  };
   return (
     <>
       <Button onPress={onOpen} color='primary'>
@@ -33,7 +31,7 @@ export default function IncomeForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form action={addIncome} onSubmit={handleSubmit}>
+            <form action={addIncome}>
               <ModalHeader className='flex flex-col gap-1'>
                 Income Form
               </ModalHeader>

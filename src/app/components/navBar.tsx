@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import {
   Navbar,
   NavbarBrand,
@@ -8,7 +8,7 @@ import {
   Button,
 } from '@nextui-org/react';
 
-export default function App() {
+export default function NavBar() {
   return (
     <Navbar className='bg-[#232122] ' maxWidth='full'>
       <NavbarBrand>
