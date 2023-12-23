@@ -12,10 +12,14 @@ import Amount from './FormElements/amount';
 import Date from './FormElements/date';
 
 import IncomeSource from './FormElements/incomeSource';
+import { addIncome } from '../actions';
 
 export default function IncomeForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  const handleSubmit = () => {
+    console.log('Clicked');
+  };
   return (
     <>
       <Button onPress={onOpen} color='primary'>
@@ -29,7 +33,7 @@ export default function IncomeForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <>
+            <form action={addIncome} onSubmit={handleSubmit}>
               <ModalHeader className='flex flex-col gap-1'>
                 Income Form
               </ModalHeader>
@@ -44,11 +48,11 @@ export default function IncomeForm() {
                 <Button color='danger' variant='light' onPress={onClose}>
                   Close
                 </Button>
-                <Button color='primary' onPress={onClose}>
+                <Button color='primary' type='submit' onPress={onClose}>
                   Add
                 </Button>
               </ModalFooter>
-            </>
+            </form>
           )}
         </ModalContent>
       </Modal>

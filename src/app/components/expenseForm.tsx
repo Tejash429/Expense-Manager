@@ -12,10 +12,14 @@ import Date from './FormElements/date';
 import Category from './FormElements/category';
 import Payment from './FormElements/payment';
 import Vendor from './FormElements/vendor';
-import addExpense from '../actions';
+import { addExpense } from '../actions';
 
 export default function ExpenseForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  const handleSubmit = () => {
+    console.log('Clicked');
+  };
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function ExpenseForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form action={addExpense}>
+            <form action={addExpense} onSubmit={handleSubmit}>
               <ModalHeader className='flex flex-col gap-1'>
                 Expense Form
               </ModalHeader>
@@ -49,7 +53,7 @@ export default function ExpenseForm() {
                 <Button color='danger' variant='light' onPress={onClose}>
                   Close
                 </Button>
-                <Button color='primary' onPress={onClose}>
+                <Button color='primary' type='submit' onPress={onClose}>
                   Add
                 </Button>
               </ModalFooter>
