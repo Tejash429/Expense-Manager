@@ -8,6 +8,7 @@ export default function Amount() {
       label='Price'
       placeholder='0.00'
       labelPlacement='outside'
+      name='amount'
       startContent={
         <div className='pointer-events-none flex items-center'>
           <span className='text-default-400 text-small'>₹</span>

@@ -5,6 +5,7 @@ export default function Date() {
   return (
     <Input
       type='date'
+      name='date'
       label='Date'
       placeholder='Select Date'
       labelPlacement='outside'

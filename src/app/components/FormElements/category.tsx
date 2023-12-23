@@ -22,6 +22,7 @@ export default function Category() {
     <div className='flex w-full flex-wrap md:flex-nowrap gap-4'>
       <Select
         placeholder='Select a Category'
+        name='category'
         label='Category'
         labelPlacement='outside'
         className='max-w-xs'

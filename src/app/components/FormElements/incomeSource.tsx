@@ -5,6 +5,7 @@ export default function IncomeSource() {
   return (
     <Input
       type='text'
+      name='incomeSource'
       label='Income Source'
       placeholder='Enter your income source'
       labelPlacement='outside'

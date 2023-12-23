@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Modal,
   ModalContent,
@@ -13,7 +12,7 @@ import Date from './FormElements/date';
 import Category from './FormElements/category';
 import Payment from './FormElements/payment';
 import Vendor from './FormElements/vendor';
-import Description from './FormElements/description';
+import addExpense from '../actions';
 
 export default function ExpenseForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -31,14 +30,13 @@ export default function ExpenseForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form>
+            <form action={addExpense}>
               <ModalHeader className='flex flex-col gap-1'>
                 Expense Form
               </ModalHeader>
               <ModalBody>
                 <Vendor />
                 <div className='flex flex-row gap-4 '>
-                  {/* <Description /> */}
                   <Amount />
                   <Date />
                 </div>

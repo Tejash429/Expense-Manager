@@ -23,6 +23,7 @@ export default function Payment() {
     <div className='flex w-full flex-wrap md:flex-nowrap gap-4'>
       <Select
         placeholder='Payment Method'
+        name='payment'
         label='Category'
         labelPlacement='outside'
         className='max-w-xs'

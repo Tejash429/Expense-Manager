@@ -10,6 +10,7 @@ export default function Vendor() {
         label='Payee'
         labelPlacement='outside'
         placeholder='Enter Payee'
+        name='payee'
       />
     </div>
   );
