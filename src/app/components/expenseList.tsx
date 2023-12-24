@@ -19,16 +19,19 @@ async function getInomes() {
   return data;
 }
 
-export default async function ExpenseList() {
+export async function combinedDatas() {
   const expenses = await getExpenses();
   const incomes = await getInomes();
-
   const combinedData = [...expenses, ...incomes].sort((a, b) => {
     const dateA = new Date(a.created_at);
     const dateB = new Date(b.created_at);
     return dateB - dateA;
   });
+  return combinedData;
+}
 
+export default async function ExpenseList() {
+  const combinedData = await combinedDatas();
   return (
     <div className='w-full max-w-md mx-auto bg-gray-800 text-white p-4 rounded-md'>
       <h2 className='text-xl font-semibold mb-4'>Transaction List</h2>
