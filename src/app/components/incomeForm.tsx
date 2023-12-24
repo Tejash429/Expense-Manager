@@ -14,6 +14,9 @@ import Date from './FormElements/date';
 
 import IncomeSource from './FormElements/incomeSource';
 import { addIncome } from '../actions';
+import toast from 'react-hot-toast';
+
+const notify = () => toast.success('Income Added.');
 
 export default function IncomeForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -46,7 +49,12 @@ export default function IncomeForm() {
                 <Button color='danger' variant='light' onPress={onClose}>
                   Close
                 </Button>
-                <Button color='primary' type='submit' onPress={onClose}>
+                <Button
+                  color='primary'
+                  type='submit'
+                  onClick={notify}
+                  onPress={onClose}
+                >
                   Add
                 </Button>
               </ModalFooter>

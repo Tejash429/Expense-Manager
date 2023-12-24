@@ -1,11 +1,10 @@
 import { Divider } from '@nextui-org/react';
-import ExpenseList from './components/expenseList';
 import ExpenseForm from './components/expenseForm';
 import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';
+import ExpenseList from './components/expenseList';
 
 export default function Home() {
-  // const amount = 0;
   return (
     <main>
       <section className='bg-[#151010] h-screen '>

@@ -14,6 +14,9 @@ import Category from './FormElements/category';
 import Payment from './FormElements/payment';
 import Vendor from './FormElements/vendor';
 import { addExpense } from '../actions';
+import toast from 'react-hot-toast';
+
+const notify = () => toast.success('Expense Added.');
 
 export default function ExpenseForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -50,7 +53,12 @@ export default function ExpenseForm() {
                 <Button color='danger' variant='light' onPress={onClose}>
                   Close
                 </Button>
-                <Button color='primary' type='submit' onPress={onClose}>
+                <Button
+                  color='primary'
+                  type='submit'
+                  onClick={notify}
+                  onPress={onClose}
+                >
                   Add
                 </Button>
               </ModalFooter>

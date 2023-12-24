@@ -14,6 +14,7 @@ export async function addExpense(formData: FormData) {
     throw error;
   }
 }
+
 export async function addIncome(formData: FormData) {
   const income = Object.fromEntries(formData);
   const supabase = createServerActionClient({ cookies });
