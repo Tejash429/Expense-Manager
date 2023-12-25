@@ -26,6 +26,7 @@ export default function Category() {
         label='Category'
         labelPlacement='outside'
         className='max-w-xs'
+        required
       >
         {categorys.map((category) => (
           <SelectItem key={category.value} value={category.value}>

@@ -9,6 +9,7 @@ export default function IncomeSource() {
       label='Income Source'
       placeholder='Enter your income source'
       labelPlacement='outside'
+      required
     />
   );
 }

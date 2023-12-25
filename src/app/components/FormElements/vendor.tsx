@@ -11,6 +11,7 @@ export default function Vendor() {
         labelPlacement='outside'
         placeholder='Enter Payee'
         name='payee'
+        required
       />
     </div>
   );

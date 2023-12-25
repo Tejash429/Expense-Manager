@@ -9,6 +9,7 @@ export default function Date() {
       label='Date'
       placeholder='Select Date'
       labelPlacement='outside'
+      required
     />
   );
 }

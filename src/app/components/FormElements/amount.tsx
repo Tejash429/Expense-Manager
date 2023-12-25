@@ -4,6 +4,7 @@ import React from 'react';
 export default function Amount() {
   return (
     <Input
+      required
       type='number'
       label='Price'
       placeholder='0.00'
