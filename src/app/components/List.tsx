@@ -1,9 +1,10 @@
+import { Divider, ScrollShadow } from '@nextui-org/react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 
-async function getExpenses() {
+export async function getExpenses() {
   const supabase = createServerComponentClient({ cookies });
   const { data, error } = await supabase.from('expense').select();
   if (error) {
@@ -34,11 +35,16 @@ export async function combinedDatas() {
 export default async function List() {
   const combinedData = await combinedDatas();
   return (
-    <div className=' laptop:w-3/4 tablet:w-3/5 tablet:ml-4 mobile:mx-auto w-4/5  bg-gray-800 text-white p-4 rounded-md'>
+    <div className=' w-full mobile:mx-auto  bg-[#1a202c] text-[#cbd5e0]  rounded-md'>
+      {/* <div className=' w-full   bg-gray-800 text-white p-4 rounded-md'> */}
+
       <ul className='divide-y divide-gray-600'>
         {combinedData &&
           combinedData.map((transaction) => (
-            <li key={transaction.id} className='py-2'>
+            <li
+              key={transaction.id}
+              className='p-4 hover:rounded-md hover:bg-[#2d3748]'
+            >
               {transaction.income_source ? (
                 <IncomeLists transaction={transaction} />
               ) : (

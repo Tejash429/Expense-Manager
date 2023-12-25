@@ -10,7 +10,7 @@ const categorys = [
   { label: 'Health', value: 'health' },
   { label: 'Personal Care', value: 'personal Care' },
   { label: 'Education', value: 'education' },
-  { label: 'Others', value: 'other' },
+  { label: 'Others', value: 'others' },
 ];
 
 export default function Category() {

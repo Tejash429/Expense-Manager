@@ -4,6 +4,7 @@ import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';
 import ExpenseList, { combinedDatas } from './components/List';
 import List from './components/List';
+import SideBar from './components/sideBar';
 
 export default async function Home() {
   const combinedData = await combinedDatas();
@@ -39,9 +40,11 @@ export default async function Home() {
         </div>
         <center>
           <div className='h-px bg-gray-700 tablet:mt-3 mobile:mt-0 text-center mb-4 w-[97%]' />
-          <div className=' overflow-y-scroll h-[79vh] '>
-            <List />
-            {/* <Divider orientation='vertical' /> */}
+          <div className='flex gap-4'>
+            <div className=' overflow-y-auto h-[79vh] w-full ml-4 '>
+              <List />
+            </div>
+            <SideBar />
           </div>
         </center>
       </section>
