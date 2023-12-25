@@ -4,17 +4,17 @@ import { Select, SelectItem } from '@nextui-org/react';
 const categorys = [
   {
     label: 'Credit Card',
-    value: 'creditCard',
+    value: 'credit Card',
   },
   {
     label: 'Dedit Card',
-    value: 'deditCard',
+    value: 'dedit Card',
   },
   {
     label: 'Cash',
     value: 'cash',
   },
-  { label: 'Online Payment', value: 'onlinePayment' },
+  { label: 'Online Payment', value: 'online Payment' },
   { label: 'Other', value: 'Other' },
 ];
 

@@ -2,7 +2,8 @@ import { Divider } from '@nextui-org/react';
 import ExpenseForm from './components/expenseForm';
 import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';
-import ExpenseList, { combinedDatas } from './components/expenseList';
+import ExpenseList, { combinedDatas } from './components/List';
+import List from './components/List';
 
 export default async function Home() {
   const combinedData = await combinedDatas();
@@ -23,9 +24,9 @@ export default async function Home() {
           <p className='text-xl font-medium '>
             Amount:-{' '}
             {amount > 0 ? (
-              <span className='text-primary'>${amount}</span>
+              <span className='text-primary'>₹ {amount}</span>
             ) : (
-              <span className='text-danger'>${amount}</span>
+              <span className='text-danger'>₹ {amount}</span>
             )}
           </p>
           <div className='flex flex-wrap items-center justify-between gap-4'>
@@ -38,8 +39,9 @@ export default async function Home() {
         </div>
         <center>
           <div className='h-px bg-gray-700 tablet:mt-3 mobile:mt-0 text-center mb-4 w-[97%]' />
-          <div className=' overflow-y-scroll h-[79vh]'>
-            <ExpenseList />
+          <div className=' overflow-y-scroll h-[79vh] '>
+            <List />
+            {/* <Divider orientation='vertical' /> */}
           </div>
         </center>
       </section>

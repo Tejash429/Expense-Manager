@@ -2,19 +2,15 @@ import React from 'react';
 import { Select, SelectItem } from '@nextui-org/react';
 
 const categorys = [
-  {
-    label: 'Food',
-    value: 'food',
-  },
-  {
-    label: 'Transportation',
-    value: 'transportation',
-  },
-  {
-    label: 'Housing',
-    value: 'housing',
-  },
+  { label: 'Food', value: 'food' },
+  { label: 'Transportation', value: 'transportation' },
+  { label: 'Housing', value: 'housing' },
   { label: 'Entertainment', value: 'entertainment' },
+  { label: 'Utilities', value: 'utilities' },
+  { label: 'Health', value: 'health' },
+  { label: 'Personal Care', value: 'personal Care' },
+  { label: 'Education', value: 'education' },
+  { label: 'Others', value: 'other' },
 ];
 
 export default function Category() {

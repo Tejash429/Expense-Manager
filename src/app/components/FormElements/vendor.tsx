@@ -9,7 +9,7 @@ export default function Vendor() {
         type='text'
         label='Payee'
         labelPlacement='outside'
-        placeholder='Enter Payee'
+        placeholder="e.g., Amazon, Grocery Store, John's Plumbing"
         name='payee'
         required
       />
