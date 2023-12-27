@@ -20,7 +20,7 @@ export default async function SideBar() {
   }, {});
 
   return (
-    <div className='w-[35%] p-6 mr-2 shadow-xl bg-[#1a202c] h-fit text-[#cbd5e0] rounded-2xl'>
+    <div className='w-[35%] p-6 mr-4 shadow-xl bg-[#1a202c] h-fit text-[#cbd5e0] rounded-2xl'>
       <h2 className='font-bold text-xl mb-4'>Where does your Money go?</h2>
       <ul className='flex flex-col gap-4 '>
         {Object.keys(categoryTotals).map((key) => (

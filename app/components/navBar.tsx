@@ -19,7 +19,7 @@ export default function NavBar() {
 
       <NavbarContent justify='end'>
         <NavbarItem>
-          <Button as={Link} color='primary' href='#' variant='flat'>
+          <Button as={Link} color='primary'>
             Login
           </Button>
         </NavbarItem>
