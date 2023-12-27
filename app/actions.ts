@@ -4,10 +4,9 @@ import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 
-const cookieStore = cookies();
-const supabase = createServerActionClient({ cookies: () => cookieStore });
-
 export async function addExpense(formData: FormData) {
+  const cookieStore = cookies();
+  const supabase = createServerActionClient({ cookies: () => cookieStore });
   const expense = Object.fromEntries(formData);
 
   // console.log('expense', expense);
@@ -21,6 +20,8 @@ export async function addExpense(formData: FormData) {
 }
 
 export async function addIncome(formData: FormData) {
+  const cookieStore = cookies();
+  const supabase = createServerActionClient({ cookies: () => cookieStore });
   const income = Object.fromEntries(formData);
   // console.log('income', income);
 

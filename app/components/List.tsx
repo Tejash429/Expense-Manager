@@ -4,11 +4,10 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 
-const cokkieStore = cookies();
-
-const supabase = createServerComponentClient({ cookies: () => cokkieStore });
-
 export async function getExpenses() {
+  const cokkieStore = cookies();
+
+  const supabase = createServerComponentClient({ cookies: () => cokkieStore });
   const { data, error } = await supabase.from('expense').select();
   if (error) {
     console.log(error.message);
@@ -16,6 +15,9 @@ export async function getExpenses() {
   return data;
 }
 async function getInomes() {
+  const cokkieStore = cookies();
+
+  const supabase = createServerComponentClient({ cookies: () => cokkieStore });
   const { data, error } = await supabase.from('income').select();
   if (error) {
     console.log(error.message);
