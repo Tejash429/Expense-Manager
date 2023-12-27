@@ -8,8 +8,6 @@ export default async function SideBar() {
     return acc + curr.amount;
   }, 0);
 
-  console.log(expeseAmount);
-
   const categoryTotals = data?.reduce((acc, curr) => {
     const category = curr.category;
 
