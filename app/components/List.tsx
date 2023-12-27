@@ -4,8 +4,11 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 
+const cokkieStore = cookies();
+
+const supabase = createServerComponentClient({ cookies: () => cokkieStore });
+
 export async function getExpenses() {
-  const supabase = createServerComponentClient({ cookies });
   const { data, error } = await supabase.from('expense').select();
   if (error) {
     console.log(error.message);
@@ -13,7 +16,6 @@ export async function getExpenses() {
   return data;
 }
 async function getInomes() {
-  const supabase = createServerComponentClient({ cookies });
   const { data, error } = await supabase.from('income').select();
   if (error) {
     console.log(error.message);
@@ -24,11 +26,13 @@ async function getInomes() {
 export async function combinedDatas() {
   const expenses = await getExpenses();
   const incomes = await getInomes();
-  const combinedData = [...expenses, ...incomes].sort((a, b) => {
-    const dateA = new Date(a.created_at);
-    const dateB = new Date(b.created_at);
-    return dateB - dateA;
-  });
+  const combinedData = [...(expenses || []), ...(incomes || [])].sort(
+    (a, b) => {
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+      return dateB.getTime() - dateA.getTime();
+    }
+  );
   return combinedData;
 }
 

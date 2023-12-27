@@ -4,20 +4,23 @@ import Progress from './progress';
 export default async function SideBar() {
   const data = await getExpenses();
 
-  const expeseAmount = data?.reduce((acc, curr) => {
+  const expeseAmount = data?.reduce((acc: any, curr: { amount: any }) => {
     return acc + curr.amount;
   }, 0);
 
-  const categoryTotals = data?.reduce((acc, curr) => {
-    const category = curr.category;
+  const categoryTotals = data?.reduce(
+    (acc: { [x: string]: any }, curr: { category: any; amount: any }) => {
+      const category = curr.category;
 
-    if (!acc[category]) {
-      acc[category] = curr.amount;
-    } else {
-      acc[category] += curr.amount;
-    }
-    return acc;
-  }, {});
+      if (!acc[category]) {
+        acc[category] = curr.amount;
+      } else {
+        acc[category] += curr.amount;
+      }
+      return acc;
+    },
+    {}
+  );
 
   return (
     <div className='w-[35%] p-6 mr-4 shadow-xl bg-[#1a202c] h-fit text-[#cbd5e0] rounded-2xl'>
