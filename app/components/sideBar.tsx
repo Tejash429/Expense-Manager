@@ -4,12 +4,15 @@ import Progress from './progress';
 export default async function SideBar() {
   const data = await getExpenses();
 
-  const expeseAmount = data?.reduce((acc: any, curr: { amount: any }) => {
+  const expeseAmount = data?.reduce((acc: number, curr: { amount: number }) => {
     return acc + curr.amount;
   }, 0);
 
   const categoryTotals = data?.reduce(
-    (acc: { [x: string]: any }, curr: { category: any; amount: any }) => {
+    (
+      acc: { [x: string]: number },
+      curr: { category: string; amount: number }
+    ) => {
       const category = curr.category;
 
       if (!acc[category]) {
@@ -28,11 +31,11 @@ export default async function SideBar() {
       <div className='w-[35%] p-6 mr-4 shadow-xl bg-[#1a202c] h-fit text-[#cbd5e0] rounded-2xl'>
         <h2 className='font-bold text-xl mb-4'>Where does your Money go?</h2>
         <ul className='flex flex-col gap-4 '>
-          {Object.keys(categoryTotals).map((key) => (
-            <li className='capitalize' key={key}>
+          {Object.keys(categoryTotals).map((category) => (
+            <li className='capitalize' key={category}>
               <Progress
-                value={categoryTotals[key]}
-                label={key}
+                value={categoryTotals[category]}
+                label={category}
                 maxValue={expeseAmount}
               />
             </li>

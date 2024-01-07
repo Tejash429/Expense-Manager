@@ -3,6 +3,18 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
+import { string } from 'zod';
+
+interface Transaction {
+  transaction: {
+    category: string;
+    amount: number;
+    date: string;
+    payee: string;
+    payment: string;
+    income_source: string;
+  };
+}
 
 export async function getExpenses() {
   const cokkieStore = cookies();
@@ -60,7 +72,7 @@ export default async function List() {
   );
 }
 
-function ExpenseLists({ transaction }: { transaction: any }) {
+function ExpenseLists({ transaction }: Transaction) {
   return (
     <div className='flex flex-wrap justify-between'>
       <div className='flex flex-col text-start'>
@@ -68,7 +80,7 @@ function ExpenseLists({ transaction }: { transaction: any }) {
           {transaction.category}
         </p>
         <p className='text-gray-400 capitalize text-base'>
-          {transaction.date + ',' + transaction.payee}
+          {` ${transaction.date} , ${transaction.payee} `}
         </p>
       </div>
 
@@ -83,7 +95,7 @@ function ExpenseLists({ transaction }: { transaction: any }) {
     </div>
   );
 }
-function IncomeLists({ transaction }: { transaction: any }) {
+function IncomeLists({ transaction }: Transaction) {
   return (
     <div className='flex flex-wrap justify-between items-center'>
       <div className='flex flex-col text-start'>
