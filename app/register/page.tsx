@@ -30,14 +30,14 @@ export default function ExpenseForm() {
           {(onClose) => (
             <form>
               <ModalHeader className='block text-center'>
-                Login to your account
+                Create your Account
               </ModalHeader>
               <ModalBody>
-                <Button className='mb-1 bg-white font-medium hover:bg-gray-200 text-base p-5 text-black'>
+                <Button className='mb-1 bg-white font-medium hover:bg-gray-200  text-base p-5 text-black'>
                   <FcGoogle size={22} />
                   Continue with Google
                 </Button>
-                <Button className=' bg-white font-medium hover:bg-gray-200 text-base p-5 text-black'>
+                <Button className=' bg-white font-medium hover:bg-gray-200  text-base p-5 text-black'>
                   <FaGithub size={22} />
                   Continue with GitHub
                 </Button>
@@ -64,14 +64,14 @@ export default function ExpenseForm() {
                   required
                 />
                 <Link
-                  href='#'
+                  href='login'
                   className='text-sm text-accent w-fit'
                   underline='hover'
                 >
-                  Forgot Password?
+                  Already have an account?
                 </Link>
                 <Button type='submit' className='bg-primary font-medium '>
-                  Login
+                  Register
                 </Button>
                 <div className='flex justify-center gap-2 mb-2'>
                   <p className='text-center text-sm'>
@@ -82,9 +82,9 @@ export default function ExpenseForm() {
                     className='cursor-pointer text-sm text-accent'
                     underline='hover'
                     onPress={onClose}
-                    href='register'
+                    href='login'
                   >
-                    Register
+                    Login
                   </Link>
                 </div>
               </ModalBody>

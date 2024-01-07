@@ -9,17 +9,15 @@ interface Props {
 
 export default function Progres({ value, label, maxValue }: Props) {
   return (
-    <>
-      <Progress
-        label={label}
-        size='sm'
-        value={value}
-        maxValue={maxValue}
-        color='danger'
-        formatOptions={{ style: 'currency', currency: 'IND' }}
-        showValueLabel
-        className='max-w-md'
-      />
-    </>
+    <Progress
+      label={label}
+      size='sm'
+      value={value}
+      maxValue={maxValue}
+      color='danger'
+      formatOptions={{ style: 'currency', currency: 'IND' }}
+      showValueLabel
+      className='max-w-md'
+    />
   );
 }
