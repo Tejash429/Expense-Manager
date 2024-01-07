@@ -27,7 +27,7 @@ export default function Payment() {
         label='Category'
         labelPlacement='outside'
         className='max-w-xs'
-        required={true}
+        required
       >
         {categorys.map((category) => (
           <SelectItem key={category.value} value={category.value}>

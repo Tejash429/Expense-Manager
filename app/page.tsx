@@ -2,12 +2,13 @@ import { Divider } from '@nextui-org/react';
 import ExpenseForm from './components/expenseForm';
 import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';
-import ExpenseList, { combinedDatas } from './components/List';
-import List from './components/List';
+import List, { combinedDatas } from './components/List';
 import SideBar from './components/sideBar';
 
 export default async function Home() {
   const combinedData = await combinedDatas();
+
+  console.log(combinedData.length);
 
   const amount = combinedData.reduce((acc, curr) => {
     return curr.income_source ? acc + curr.amount : acc - curr.amount;
@@ -42,7 +43,7 @@ export default async function Home() {
           <div className='h-px bg-gray-700 tablet:mt-3 mobile:mt-0 text-center mb-4 w-[97%]' />
           <div className='flex gap-4'>
             <div className=' overflow-y-auto h-[79vh] w-full ml-4 '>
-              <List />
+              {combinedData.length == 0 ? 'There is no data to show' : <List />}
             </div>
             <SideBar />
           </div>

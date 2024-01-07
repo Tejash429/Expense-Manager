@@ -42,22 +42,19 @@ export default async function List() {
   const combinedData = await combinedDatas();
   return (
     <div className=' w-full mobile:mx-auto  bg-[#1a202c] text-[#cbd5e0]  rounded-md'>
-      {/* <div className=' w-full   bg-gray-800 text-white p-4 rounded-md'> */}
-
       <ul className='divide-y divide-gray-600'>
-        {combinedData &&
-          combinedData.map((transaction) => (
-            <li
-              key={transaction.id}
-              className='p-4 hover:rounded-md hover:bg-[#2d3748]'
-            >
-              {transaction.income_source ? (
-                <IncomeLists transaction={transaction} />
-              ) : (
-                <ExpenseLists transaction={transaction} />
-              )}
-            </li>
-          ))}
+        {combinedData?.map((transaction) => (
+          <li
+            key={transaction.id}
+            className='p-4 hover:rounded-md hover:bg-[#2d3748]'
+          >
+            {transaction.income_source ? (
+              <IncomeLists transaction={transaction} />
+            ) : (
+              <ExpenseLists transaction={transaction} />
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -17,7 +17,7 @@ export default function Progres({ value, label, maxValue }: Props) {
         maxValue={maxValue}
         color='danger'
         formatOptions={{ style: 'currency', currency: 'IND' }}
-        showValueLabel={true}
+        showValueLabel
         className='max-w-md'
       />
     </>
