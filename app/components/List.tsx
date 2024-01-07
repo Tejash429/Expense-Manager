@@ -1,9 +1,6 @@
-import { Divider, ScrollShadow } from '@nextui-org/react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import { string } from 'zod';
+import React from 'react';
 
 interface Transaction {
   transaction: {

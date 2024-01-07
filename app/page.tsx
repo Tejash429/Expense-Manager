@@ -1,4 +1,3 @@
-import { Divider } from '@nextui-org/react';
 import ExpenseForm from './components/expenseForm';
 import IncomeForm from './components/incomeForm';
 import NavBar from './components/navBar';

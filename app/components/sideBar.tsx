@@ -1,4 +1,4 @@
-import { combinedDatas, getExpenses } from './List';
+import { getExpenses } from './List';
 import Progress from './progress';
 
 export default async function SideBar() {
