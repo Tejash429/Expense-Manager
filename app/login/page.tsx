@@ -13,6 +13,7 @@ import {
 
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import NextLink from 'next/link';
 
 export default function ExpenseForm() {
   const { onOpen, onOpenChange } = useDisclosure();
@@ -78,6 +79,7 @@ export default function ExpenseForm() {
                     Do you have an account yet?
                   </p>
                   <Link
+                    as={NextLink}
                     color='primary'
                     className='cursor-pointer text-sm text-accent'
                     underline='hover'

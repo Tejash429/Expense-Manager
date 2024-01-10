@@ -10,7 +10,7 @@ import {
   Input,
   Link,
 } from '@nextui-org/react';
-
+import NextLink from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
@@ -78,6 +78,7 @@ export default function ExpenseForm() {
                     Already have an Account?
                   </p>
                   <Link
+                    as={NextLink}
                     color='primary'
                     className='cursor-pointer text-sm text-accent'
                     underline='hover'
