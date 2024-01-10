@@ -75,14 +75,14 @@ export default function ExpenseForm() {
                 </Button>
                 <div className='flex justify-center gap-2 mb-2'>
                   <p className='text-center text-sm'>
-                    Do you have an account yet?
+                    Already have an Account?
                   </p>
                   <Link
                     color='primary'
                     className='cursor-pointer text-sm text-accent'
                     underline='hover'
                     onPress={onClose}
-                    href='login'
+                    href='/login'
                   >
                     Login
                   </Link>
