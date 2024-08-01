@@ -23,7 +23,7 @@ export async function getExpenses() {
   }
   return data;
 }
-async function getInomes() {
+export async function getIncomes() {
   const cokkieStore = cookies();
 
   const supabase = createServerComponentClient({ cookies: () => cokkieStore });
@@ -36,7 +36,7 @@ async function getInomes() {
 
 export async function combinedDatas() {
   const expenses = await getExpenses();
-  const incomes = await getInomes();
+  const incomes = await getIncomes();
   const combinedData = [...(expenses || []), ...(incomes || [])].sort(
     (a, b) => {
       const dateA = new Date(a.created_at);
@@ -50,12 +50,12 @@ export async function combinedDatas() {
 export default async function List() {
   const combinedData = await combinedDatas();
   return (
-    <div className=' w-full mobile:mx-auto  bg-[#1a202c] text-[#cbd5e0]  rounded-md'>
-      <ul className='divide-y divide-gray-600'>
+    <div className='w-full mobile:mx-auto bg-[#1E1E1E] text-[#cbd5e0] rounded-md '>
+      <ul className='divide-y divide-gray-600 '>
         {combinedData?.map((transaction) => (
           <li
             key={transaction.id}
-            className='p-4 hover:rounded-md hover:bg-[#2d3748]'
+            className='p-4 hover:rounded-md hover:bg-[#2A2A2A]'
           >
             {transaction.income_source ? (
               <IncomeLists transaction={transaction} />
@@ -73,11 +73,9 @@ function ExpenseLists({ transaction }: Transaction) {
   return (
     <div className='flex flex-wrap justify-between'>
       <div className='flex flex-col text-start'>
-        <p className='text-xl font-medium capitalize '>
-          {transaction.category}
-        </p>
+        <p className='text-xl font-medium capitalize '>{transaction.payee}</p>
         <p className='text-gray-400 capitalize text-base'>
-          {` ${transaction.date} , ${transaction.payee} `}
+          {` ${transaction.date} , ${transaction.category} `}
         </p>
       </div>
 

@@ -23,7 +23,7 @@ export default function ExpenseForm() {
 
   return (
     <>
-      <Button onPress={onOpen} color='danger'>
+      <Button onPress={onOpen} className='bg-[#F44336]'>
         Add Expense
       </Button>
       <Modal
@@ -34,7 +34,7 @@ export default function ExpenseForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form action={addExpense}>
+            <form action={addExpense} className='bg-[#1E1E1E]'>
               <ModalHeader className='flex flex-col gap-1'>
                 Expense Form
               </ModalHeader>

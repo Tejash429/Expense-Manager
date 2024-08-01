@@ -10,7 +10,7 @@ import {
 
 export default function NavBar() {
   return (
-    <Navbar className='bg-[#232122] ' maxWidth='full'>
+    <Navbar className='bg-[#1E1E1E]' maxWidth='full'>
       <NavbarBrand>
         <p className='font-bold text-inherit tablet:text-2xl  mobile:text-xl'>
           MoneyMinder
@@ -19,7 +19,8 @@ export default function NavBar() {
 
       <NavbarContent justify='end'>
         <NavbarItem>
-          <Button as={Link} color='primary'>
+          {/* <Button as={Link} color='primary'> */}
+          <Button as={Link} className='bg-[#6200EE]'>
             Login
           </Button>
         </NavbarItem>

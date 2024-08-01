@@ -24,7 +24,7 @@ export default function Payment() {
       <Select
         placeholder='Payment Method'
         name='payment'
-        label='Category'
+        label='Payment Method'
         labelPlacement='outside'
         className='max-w-xs'
         required

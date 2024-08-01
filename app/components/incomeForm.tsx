@@ -23,7 +23,8 @@ export default function IncomeForm() {
 
   return (
     <>
-      <Button onPress={onOpen} color='primary'>
+      {/* <Button onPress={onOpen} color='primary'> */}
+      <Button onPress={onOpen} className='bg-[#4CAF50]'>
         Add Income
       </Button>
       <Modal
@@ -34,7 +35,7 @@ export default function IncomeForm() {
       >
         <ModalContent>
           {(onClose) => (
-            <form action={addIncome}>
+            <form action={addIncome} className='bg-[#1E1E1E]'>
               <ModalHeader className='flex flex-col gap-1'>
                 Income Form
               </ModalHeader>

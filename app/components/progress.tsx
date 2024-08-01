@@ -5,19 +5,32 @@ interface Props {
   value: number;
   label: string;
   maxValue: number;
+  color?: string;
 }
+type categoryColors =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'default';
 
-export default function Progres({ value, label, maxValue }: Props) {
+export default function Progres({
+  value,
+  label,
+  maxValue,
+  color = 'danger',
+}: Props) {
   return (
     <Progress
       label={label}
       size='sm'
       value={value}
       maxValue={maxValue}
-      color='danger'
       formatOptions={{ style: 'currency', currency: 'IND' }}
       showValueLabel
       className='max-w-md'
+      color={color as categoryColors}
     />
   );
 }
